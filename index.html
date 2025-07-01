@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vineyard Sprayer Monitor</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="icon.png">
+</head>
+<body>
+  <div class="container">
+    <h1>Sprayer Monitor</h1>
+    <div id="status">Disconnected</div>
+    <div class="data">
+      <div>Flow Rate: <span id="gpm">--</span> GPM</div>
+      <div>Gallons/Acre: <span id="gpa">--</span></div>
+      <div>GPS: <span id="gps">--, --</span></div>
+    </div>
+    <button id="connect">Connect to Sprayer</button>
+    <button id="download">Download Logs</button>
+    <div id="map" style="height: 300px; margin-top: 20px;"></div>
+  </div>
+
+  <script src="app.js"></script>
+  <!-- Leaflet.js for maps (loaded from CDN) -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+</body>
+</html>
