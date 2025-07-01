@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Meta + Title -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Auth Screen (Initial View) -->
+  <div id="auth-screen" class="screen">
+    <div class="auth-card">
+      <img src="assets/logos/logo.svg" alt="Vineyard Sprayer" class="logo">
+      <input type="email" id="email" placeholder="Email">
+      <input type="password" id="password" placeholder="Password">
+      <button id="login-btn">Sign In</button>
+      <button id="signup-btn">Create Account</button>
+    </div>
+  </div>
+
+  <!-- Main App (Hidden Until Auth) -->
+  <div id="app-container" class="screen hidden">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <div class="user-profile">
+        <img src="assets/icons/user.svg" id="user-avatar">
+        <span id="username">user@vineyard.com</span>
+      </div>
+      
+      <nav>
+        <button class="nav-btn active" data-screen="live-spray">
+          <img src="assets/icons/sprayer.svg"> Live Spray
+        </button>
+        <button class="nav-btn" data-screen="history">
+          <img src="assets/icons/history.svg"> Spray History
+        </button>
+        <button class="nav-btn" data-screen="planner">
+          <img src="assets/icons/calendar.svg"> Plan Spray
+        </button>
+      </nav>
+      
+      <button id="logout-btn">Sign Out</button>
+    </div>
+
+    <!-- Main Content -->
+    <div class="content">
+      <!-- Live Spray Screen -->
+      <div id="live-spray" class="content-screen">
+        <!-- Existing spray controls + map -->
+        <div id="map"></div>
+      </div>
+      
+      <!-- History Screen -->
+      <div id="history" class="content-screen hidden">
+        <h2>Past Spray Jobs</h2>
+        <div class="job-list">
+          <!-- Dynamically populated -->
+        </div>
+      </div>
+      
+      <!-- Planner Screen -->
+      <div id="planner" class="content-screen hidden">
+        <h2>Plan New Spray</h2>
+        <!-- Planning form -->
+      </div>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="auth.js"></script>
+  <script src="app.js"></script>
+  <script src="spray-planner.js"></script>
+</body>
+</html>
